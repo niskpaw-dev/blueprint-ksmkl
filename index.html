@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blueprint Sistem · Kejohanan Silat Madani Kuala Langat 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --kertas:#F4EEDE; --kertas-2:#FBF7EC;
+    --dakwat:#15263F; --dakwat-soft:#41506A;
+    --emas:#AC8438; --emas-deep:#856526; --emas-tint:rgba(172,132,56,0.16);
+    --marun:#7C2D2A; --jaya:#3F6B4F; --jaya-tint:rgba(63,107,79,0.12);
+    --garis:rgba(21,38,63,0.14); --garis-emas:rgba(172,132,56,0.40);
+    --r:14px; --r-s:10px; --ease:cubic-bezier(0.22,1,0.36,1);
+    --shadow:0 18px 40px -22px rgba(21,38,63,0.45);
+  }
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  body{
+    font-family:"Plus Jakarta Sans",system-ui,sans-serif; color:var(--dakwat);
+    background-color:var(--kertas); line-height:1.55; padding:0 16px;
+    background-image:radial-gradient(120% 80% at 50% -10%, rgba(251,247,236,0.9), transparent 60%);
+  }
+  .wrap{ max-width:840px; margin:0 auto; padding:48px 0 80px; }
+
+  .motif{ height:13px; background-repeat:repeat-x; background-position:center; opacity:.55;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='13' viewBox='0 0 28 13'%3E%3Cpath d='M0 13 L14 1 L28 13' fill='none' stroke='%23AC8438' stroke-width='1.2'/%3E%3C/svg%3E"); }
+
+  header{ text-align:center; padding:6px 0 30px; }
+  .crest{ width:50px; height:50px; margin:0 auto 18px; display:flex; align-items:center;
+    justify-content:center; border:1.4px solid var(--garis-emas); border-radius:50%; color:var(--emas); }
+  .crest svg{ width:27px; height:27px; }
+  .eyebrow{ font-size:11.5px; letter-spacing:.26em; text-transform:uppercase; color:var(--emas-deep); font-weight:600; margin-bottom:12px; }
+  h1{ font-family:"Cormorant Garamond",serif; font-weight:700; font-size:clamp(28px,6vw,42px); line-height:1.05; letter-spacing:.5px; }
+  h1 .sb{ display:block; color:var(--emas); font-size:.55em; font-weight:600; margin-top:8px; letter-spacing:.14em; }
+  .lead{ margin:14px auto 0; max-width:54ch; color:var(--dakwat-soft); font-size:14.5px; }
+
+  section{ margin-top:40px; }
+  .sec-head{ display:flex; align-items:baseline; gap:12px; margin-bottom:6px; }
+  .sec-num{ font-family:"Cormorant Garamond",serif; font-weight:600; font-size:22px; color:var(--emas); width:30px; flex:none; }
+  .sec-title{ font-size:19px; font-weight:700; }
+  .sec-sub{ margin:0 0 18px 42px; color:var(--dakwat-soft); font-size:14px; }
+
+  /* aliran data */
+  .flow{ display:flex; align-items:stretch; gap:12px; flex-wrap:wrap; }
+  .flow-step{ flex:1; min-width:200px; background:var(--kertas-2); border:1px solid var(--garis);
+    border-radius:var(--r); padding:18px; box-shadow:var(--shadow); position:relative; }
+  .flow-step .n{ width:30px; height:30px; border-radius:50%; background:var(--emas-tint); color:var(--emas-deep);
+    border:1px solid var(--garis-emas); display:flex; align-items:center; justify-content:center; font-weight:700; font-size:14px; margin-bottom:12px; }
+  .flow-step .t{ font-weight:700; font-size:15px; }
+  .flow-step .d{ font-size:13px; color:var(--dakwat-soft); margin-top:5px; }
+  .flow-arrow{ display:flex; align-items:center; color:var(--emas); flex:none; }
+  .flow-arrow svg{ width:22px; height:22px; }
+  @media (max-width:680px){ .flow-arrow{ transform:rotate(90deg); margin:0 auto; } }
+
+  /* jadual skema */
+  .tab-card{ background:var(--kertas-2); border:1px solid var(--garis); border-radius:var(--r);
+    box-shadow:var(--shadow); overflow:hidden; margin-bottom:20px; }
+  .tab-top{ display:flex; align-items:center; gap:11px; padding:15px 20px; border-bottom:1px solid var(--garis);
+    background:linear-gradient(180deg, var(--emas-tint), transparent); }
+  .tab-top .ic{ width:34px; height:34px; border-radius:9px; background:#fff; border:1px solid var(--garis-emas);
+    display:flex; align-items:center; justify-content:center; color:var(--emas-deep); flex:none; }
+  .tab-top .ic svg{ width:18px; height:18px; }
+  .tab-top .nm{ font-weight:700; font-size:16px; }
+  .tab-top .meta{ font-size:12.5px; color:var(--dakwat-soft); }
+  table{ width:100%; border-collapse:collapse; font-size:13.5px; }
+  th, td{ text-align:left; padding:11px 20px; vertical-align:top; }
+  thead th{ font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:var(--dakwat-soft); font-weight:600;
+    border-bottom:1px solid var(--garis); }
+  tbody tr{ border-bottom:1px solid rgba(21,38,63,0.07); }
+  tbody tr:last-child{ border-bottom:none; }
+  td.field{ font-weight:600; white-space:nowrap; }
+  td.eg{ font-variant-numeric:tabular-nums; color:var(--marun); font-weight:600; white-space:nowrap; }
+  .auto{ display:inline-block; font-size:10.5px; font-weight:700; letter-spacing:.04em; color:var(--jaya);
+    background:var(--jaya-tint); border-radius:6px; padding:1px 7px; margin-left:7px; vertical-align:middle; }
+  .soon{ display:inline-block; font-size:10.5px; font-weight:700; letter-spacing:.04em; color:var(--emas-deep);
+    background:var(--emas-tint); border-radius:6px; padding:1px 7px; margin-left:7px; vertical-align:middle; }
+  .link-note{ display:flex; gap:10px; align-items:flex-start; background:var(--kertas-2); border:1px dashed var(--garis-emas);
+    border-radius:var(--r); padding:14px 16px; font-size:13.5px; color:var(--dakwat-soft); margin-top:4px; }
+  .link-note svg{ width:18px; height:18px; color:var(--emas); flex:none; margin-top:1px; }
+  .link-note b{ color:var(--dakwat); }
+
+  /* kitaran hayat */
+  .life{ display:flex; gap:12px; flex-wrap:wrap; }
+  .life-step{ flex:1; min-width:190px; border:1px solid var(--garis); border-radius:var(--r); padding:16px 18px; background:var(--kertas-2); }
+  .life-step .badge{ font-size:11px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--emas-deep); }
+  .life-step .d{ font-size:13px; color:var(--dakwat-soft); margin-top:6px; }
+
+  /* fasa */
+  .phase{ display:flex; gap:14px; align-items:flex-start; padding:16px 0; border-bottom:1px solid var(--garis); }
+  .phase:last-child{ border-bottom:none; }
+  .phase .tag{ flex:none; width:88px; }
+  .phase .pill{ display:inline-block; font-size:11px; font-weight:700; letter-spacing:.04em; padding:3px 10px; border-radius:999px; }
+  .pill.done{ background:var(--jaya-tint); color:var(--jaya); }
+  .pill.next{ background:var(--emas-tint); color:var(--emas-deep); }
+  .phase .body .t{ font-weight:700; font-size:15.5px; }
+  .phase .body .d{ font-size:13.5px; color:var(--dakwat-soft); margin-top:4px; }
+
+  footer{ text-align:center; margin-top:46px; font-size:12.5px; color:var(--dakwat-soft); }
+  footer .org{ color:var(--emas-deep); font-weight:600; }
+
+  @media print{
+    body{ background:#fff; } .tab-card,.flow-step{ box-shadow:none; }
+    .wrap{ padding:10px 0; } section{ break-inside:avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="crest" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+        <path d="M15.5 3.5a7 7 0 1 0 5 11.8A8.5 8.5 0 0 1 15.5 3.5Z" stroke-linejoin="round"/>
+        <path d="m18.5 5 .9 1.9 2 .3-1.5 1.4.4 2-1.8-1-1.8 1 .4-2L15 7.2l2-.3.9-1.9Z" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <p class="eyebrow">Cadangan Seni Bina Sistem · Untuk Perbincangan</p>
+    <h1>Blueprint Sistem Pendaftaran Digital
+      <span class="sb">KEJOHANAN SILAT MADANI KUALA LANGAT 2026</span>
+    </h1>
+    <p class="lead">Dokumen ini menerangkan bagaimana pendaftaran atas talian berfungsi, bentuk simpanan datanya, dan hala tuju sistem secara keseluruhan &mdash; untuk semakan dan perbincangan bersama urusetia.</p>
+  </header>
+
+  <div class="motif" aria-hidden="true"></div>
+
+  <!-- 1 · ALIRAN -->
+  <section>
+    <div class="sec-head"><span class="sec-num">I</span><div class="sec-title">Bagaimana Ia Berfungsi</div></div>
+    <p class="sec-sub">Tiga langkah ringkas &mdash; daripada pengurus mengisi borang, sehingga data masuk ke dalam fail urusetia secara automatik.</p>
+    <div class="flow">
+      <div class="flow-step">
+        <div class="n">1</div>
+        <div class="t">Pengurus isi borang</div>
+        <div class="d">Borang atas talian di telefon / komputer. Kategori, jantina &amp; kelas berat dikenal pasti automatik dari MyKad &amp; berat.</div>
+      </div>
+      <div class="flow-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="flow-step">
+        <div class="n">2</div>
+        <div class="t">Data dihantar automatik</div>
+        <div class="d">Selepas "Semak &amp; Sahkan", maklumat dihantar terus ke sistem &mdash; tiada salin-tampal manual.</div>
+      </div>
+      <div class="flow-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="flow-step">
+        <div class="n">3</div>
+        <div class="t">Tersimpan dalam Google Sheet</div>
+        <div class="d">Urusetia melihat semua pendaftaran tersusun dalam satu fail Google Sheet yang boleh dikongsi &amp; dieksport.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2 · STRUKTUR -->
+  <section>
+    <div class="sec-head"><span class="sec-num">II</span><div class="sec-title">Struktur Data &mdash; Dua Jadual</div></div>
+    <p class="sec-sub">Data disimpan dalam dua tab supaya kemas dan boleh digunakan semula untuk undian &amp; jadual kelak. Tanda <span class="auto">AUTO</span> bermaksud sistem isi sendiri.</p>
+
+    <div class="tab-card">
+      <div class="tab-top">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M17 20a5 5 0 0 0-10 0M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z"/></svg></div>
+        <div><div class="nm">Tab 1 &middot; Pasukan</div><div class="meta">Satu baris bagi setiap pasukan didaftarkan</div></div>
+      </div>
+      <table>
+        <thead><tr><th>Lajur</th><th>Keterangan</th><th>Contoh</th></tr></thead>
+        <tbody>
+          <tr><td class="field">ID Pasukan <span class="auto">AUTO</span></td><td>Nombor rujukan unik pasukan</td><td class="eg">PSK-0001</td></tr>
+          <tr><td class="field">Tarikh Daftar <span class="auto">AUTO</span></td><td>Tarikh &amp; masa pendaftaran</td><td class="eg">19/06/2026</td></tr>
+          <tr><td class="field">Nama Pasukan</td><td>Pasukan / persatuan / sekolah</td><td class="eg">Gayong KL</td></tr>
+          <tr><td class="field">Nama Pengurus</td><td>Pegawai bertanggungjawab</td><td class="eg">Ahmad Ali</td></tr>
+          <tr><td class="field">Telefon Pengurus</td><td>Nombor untuk dihubungi</td><td class="eg">012-3456789</td></tr>
+          <tr><td class="field">Jurulatih 1 &amp; 2</td><td>Jurulatih (kedua jika ada)</td><td class="eg">&mdash;</td></tr>
+          <tr><td class="field">Jumlah Pesilat <span class="auto">AUTO</span></td><td>Bilangan pesilat didaftar</td><td class="eg">8</td></tr>
+          <tr><td class="field">Jumlah Yuran <span class="auto">AUTO</span></td><td>RM65 &times; bilangan pesilat</td><td class="eg">RM520.00</td></tr>
+          <tr><td class="field">Status Bayaran</td><td>Disahkan oleh bendahari</td><td class="eg">Belum / Sudah</td></tr>
+          <tr><td class="field">Status Penyertaan</td><td>Peringkat data (lihat Bhg. III)</td><td class="eg">Baru</td></tr>
+          <tr><td class="field">Catatan</td><td>Ruang nota urusetia</td><td class="eg">&mdash;</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="tab-card">
+      <div class="tab-top">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 7h16M4 12h16M4 17h10"/></svg></div>
+        <div><div class="nm">Tab 2 &middot; Pesilat</div><div class="meta">Satu baris bagi setiap pesilat &mdash; dipautkan ke pasukannya</div></div>
+      </div>
+      <table>
+        <thead><tr><th>Lajur</th><th>Keterangan</th><th>Contoh</th></tr></thead>
+        <tbody>
+          <tr><td class="field">ID Pesilat <span class="auto">AUTO</span></td><td>Rujukan unik pesilat</td><td class="eg">PSL-00001</td></tr>
+          <tr><td class="field">ID Pasukan <span class="auto">AUTO</span></td><td>Pautan ke Tab Pasukan</td><td class="eg">PSK-0001</td></tr>
+          <tr><td class="field">Nama Pesilat</td><td>Nama penuh</td><td class="eg">Amin Ahmad</td></tr>
+          <tr><td class="field">No. MyKad</td><td>Kad pengenalan</td><td class="eg">151022-11-1511</td></tr>
+          <tr><td class="field">Tarikh Lahir <span class="auto">AUTO</span></td><td>Dibaca dari MyKad</td><td class="eg">22/10/2015</td></tr>
+          <tr><td class="field">Umur <span class="auto">AUTO</span></td><td>Ikut tahun lahir</td><td class="eg">11</td></tr>
+          <tr><td class="field">Jantina <span class="auto">AUTO</span></td><td>Dibaca dari MyKad</td><td class="eg">Putra</td></tr>
+          <tr><td class="field">Kategori <span class="auto">AUTO</span></td><td>Ditentukan ikut umur</td><td class="eg">Dini</td></tr>
+          <tr><td class="field">Kelas Berat <span class="auto">AUTO</span></td><td>Ditentukan ikut berat</td><td class="eg">D (34-36)</td></tr>
+          <tr><td class="field">Berat Daftar</td><td>Berat semasa pendaftaran</td><td class="eg">34.0 Kg</td></tr>
+          <tr><td class="field">Sekolah / Kod / Alamat</td><td>Jika pesilat masih bersekolah</td><td class="eg">SK Sg Lang</td></tr>
+          <tr><td class="field">Status Timbang <span class="soon">KELAK</span></td><td>Disahkan masa timbang di venue</td><td class="eg">Belum</td></tr>
+          <tr><td class="field">Catatan</td><td>Ruang nota urusetia</td><td class="eg">&mdash;</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="link-note">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 12a3 3 0 0 1 3-3h3a3 3 0 0 1 0 6h-1M15 12a3 3 0 0 1-3 3H9a3 3 0 0 1 0-6h1" stroke-linecap="round"/></svg>
+      <div><b>Kenapa dua jadual?</b> "ID Pasukan" memautkan setiap pesilat kepada pasukannya. Ini membolehkan urusetia menyusun semula pesilat <b>ikut kelas berat</b> kemudian &mdash; asas penting untuk menjana undian &amp; jadual perlawanan.</div>
+    </div>
+  </section>
+
+  <!-- 3 · KITARAN -->
+  <section>
+    <div class="sec-head"><span class="sec-num">III</span><div class="sec-title">Kitaran Hayat Penyertaan</div></div>
+    <p class="sec-sub">Status data berubah mengikut peringkat &mdash; ini melindungi daripada perubahan tidak sengaja selepas undian dibuat.</p>
+    <div class="life">
+      <div class="life-step"><div class="badge">1 · Baru</div><div class="d">Pengurus baru menghantar. Boleh dibetulkan sehingga tarikh tutup pendaftaran.</div></div>
+      <div class="life-step"><div class="badge">2 · Disahkan</div><div class="d">Disahkan semasa Taklimat Pengurus. Senarai menjadi muktamad (selaras handout 9.3).</div></div>
+      <div class="life-step"><div class="badge">3 · Diundi</div><div class="d">Selepas undian dijana, data dibekukan supaya bracket kekal sah.</div></div>
+    </div>
+  </section>
+
+  <!-- 4 · FASA -->
+  <section>
+    <div class="sec-head"><span class="sec-num">IV</span><div class="sec-title">Hala Tuju Sistem</div></div>
+    <p class="sec-sub">Setiap fasa berdiri sendiri dan dibina mengikut keperluan. Fasa 2 &amp; 3 adalah cadangan untuk perbincangan.</p>
+    <div class="phase">
+      <div class="tag"><span class="pill done">SIAP</span></div>
+      <div class="body"><div class="t">Fasa 1 &mdash; Pendaftaran Digital</div><div class="d">Borang atas talian, pengenalan kategori &amp; kelas automatik, semakan akhir sebelum hantar, dan lockup logo penganjur.</div></div>
+    </div>
+    <div class="phase">
+      <div class="tag"><span class="pill next">CADANGAN</span></div>
+      <div class="body"><div class="t">Fasa 2 &mdash; Undian &amp; Jadual Perlawanan</div><div class="d">Menjana cabutan (bracket) dari data pesilat ikut kelas, dan menyusun jadual merentas gelanggang secara automatik.</div></div>
+    </div>
+    <div class="phase">
+      <div class="tag"><span class="pill next">CADANGAN</span></div>
+      <div class="body"><div class="t">Fasa 3 &mdash; Pemarkahan Langsung &amp; Paparan TV</div><div class="d">Wasit / juri merekod skor setiap perlawanan, dipaparkan secara langsung di skrin TV gelanggang.</div></div>
+    </div>
+  </section>
+
+  <div class="motif" aria-hidden="true" style="margin-top:40px"></div>
+  <footer>
+    Disediakan untuk perbincangan urusetia &mdash; Anjuran <span class="org">PSKIDO Kuala Langat</span>.
+  </footer>
+</div>
+</body>
+</html>
