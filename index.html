@@ -105,6 +105,24 @@
     body{ background:#fff; } .tab-card,.flow-step{ box-shadow:none; }
     .wrap{ padding:10px 0; } section{ break-inside:avoid; }
   }
+
+  /* ---------- Mesra mobile: jadual jadi kad bertindan ---------- */
+  @media (max-width:640px){
+    .wrap{ padding:36px 0 64px; }
+    .sec-sub{ margin-left:0; }
+
+    /* tukar jadual kepada blok */
+    table thead{ position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); }
+    table, table tbody, table tr, table td{ display:block; width:100%; }
+    table tr{ padding:13px 18px; border-bottom:1px solid var(--garis); }
+    table tr:last-child{ border-bottom:none; }
+    table td{ padding:0; white-space:normal; }
+
+    td.field{ font-size:15px; font-weight:700; }                 /* Lajur = tajuk kad */
+    td:nth-child(2){ color:var(--dakwat-soft); font-size:13.5px; margin-top:3px; }  /* Keterangan */
+    td.eg{ white-space:normal; margin-top:7px; font-size:13.5px; }                  /* Contoh */
+    td.eg::before{ content:"Contoh \2014 "; color:var(--dakwat-soft); font-weight:600; }
+  }
 </style>
 </head>
 <body>
